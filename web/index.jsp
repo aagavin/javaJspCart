@@ -29,7 +29,7 @@
 		<div class="container-fluid">
 			<div class="row">
 			<c:forEach items="${inventory.items}" var="item">
-				<form>
+				<form action="cart" method="POST">
 				<div class="col-md-5 col-xs-5">
 					<h2><c:out value="${item.name}" /></h2>
 					<div class="container-fluid">
@@ -48,7 +48,9 @@
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<input type="number" min="0" max="<c:out value="${item.stock}" />">
+								<label for="quantity">Select Quantity:</label>
+								<input type="number" id="quantity" name="quantity" min="0" max="<c:out value="${item.stock}" />" required>
+								<input type="hidden" name="sku" value="<c:out value="${item.sku}" />" required>
 							</div>
 							<div class="col-md-6">
 								<input type="submit" value="Add to Cart"/>
