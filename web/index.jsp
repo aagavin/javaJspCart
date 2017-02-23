@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.AaronFernandes.Assignment2.Inventory" %><%--
   Created by Aaron Fernandes.
   Comp 303 - Section 2
   Assignment 2
@@ -10,6 +10,7 @@
 	<jsp:setProperty name="inventory" property="*" />
 </jsp:useBean>
 
+<c:set var="inventory" value="${inventory}" scope="session" />
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,7 +25,9 @@
 		<![endif]-->
   </head>
   <body>
-
+		<%
+			inventory.decrementItem("2A-0E-25-16");
+		%>
 		<h1>This is a form</h1>
 		<div class="container-fluid">
 			<div class="row">
@@ -49,7 +52,7 @@
 						<div class="row">
 							<div class="col-md-6">
 								<label for="quantity">Select Quantity:</label>
-								<input type="number" id="quantity" name="quantity" min="0" max="<c:out value="${item.stock}" />" required>
+								<input type="number" id="quantity" name="quantity" min="1" max="<c:out value="${item.stock}" />" required>
 								<input type="hidden" name="sku" value="<c:out value="${item.sku}" />" required>
 							</div>
 							<div class="col-md-6">
