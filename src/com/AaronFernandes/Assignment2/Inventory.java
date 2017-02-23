@@ -29,7 +29,7 @@ public class Inventory {
 	}
 	
 	public void decrementItem(String sku){
-		
+		this.items.remove(0);
 	}
 	
 }
