@@ -1,0 +1,17 @@
+.item-cell{
+    padding: 1em;
+    border: 1px solid #fff;
+    border-radius: 1%;
+}
+.item-cell:hover{
+    background-color: #fefefe;
+    border: 1px solid #aaa;
+}
+.row{
+    overflow: hidden;
+}
+
+[class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
