@@ -44,18 +44,19 @@ public class CartServlet extends HttpServlet {
 		
 		//get sku and quantity from the post request
 		String sku = request.getParameter("sku");
-		int quanity = Integer.parseInt(request.getParameter("quantity"));
+		int quality = Integer.parseInt(request.getParameter("quantity"));
 		
 		// if the item is in the cart update the count
 		// else add a new item
 		if (cart.isItemInCart(sku)){
-			cart.updateItemCount(sku,quanity);
-		}	else {
-			cart.addItem(sku, quanity);
+			cart.updateItemCount(sku,quality);
+		}
+		else {
+			cart.addItem(sku, quality);
 		}
 		
 		// update inventory count
-		inventory.decrementItem(sku,quanity);
+		inventory.decrementItem(sku,quality);
 		
 		// add attributes to the request
 		request.setAttribute("cart", cart);

@@ -23,7 +23,7 @@ public class Cart {
 	}
 	
 	/**
-	 * Adds a new item in the class 
+	 * Adds a new item in the class
 	 * @param sku
 	 * @param value
 	 */
@@ -55,8 +55,7 @@ public class Cart {
 	}
 	
 	/**
-	 *
-	 * @return gets the cart
+	 * @return gets the cart map
 	 */
 	public Map<String, Integer> get_cartItems() {
 		return this._cartItems;
