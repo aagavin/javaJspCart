@@ -4,6 +4,8 @@ Assignment2
 ### Author
 Aaron Fernandes - 300773526
 
+Group: 6
+
 
 ## Exercise #1: Data Persistence (simulated)
 
