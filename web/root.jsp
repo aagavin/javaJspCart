@@ -27,10 +27,11 @@
 		<![endif]-->
   </head>
   <body>
-		<h1>This is a form</h1>
+		<h1>Shopping Cart Application</h1>
 		<div class="container-fluid">
 			<div class="row">
 			<c:forEach items="${inventory.get_items()}" var="item">
+				<c:if test="${item.stock!=0}">
 				<form action="cart" method="POST">
 				<div class="col-md-5 col-xs-5">
 					<h2><c:out value="${item.name}" /></h2>
@@ -50,17 +51,20 @@
 						</div>
 						<div class="row">
 							<div class="col-md-6">
+								<div class="form-group">
 								<label for="quantity">Select Quantity:</label>
 								<input type="number" id="quantity" name="quantity" min="1" max="<c:out value="${item.stock}" />" required>
 								<input type="hidden" name="sku" value="<c:out value="${item.sku}" />" required>
+								</div>
 							</div>
 							<div class="col-md-6">
-								<input type="submit" value="Add to Cart"/>
+								<input type="submit" value="Add to Cart" class="btn btn-primary btn-sm"/>
 							</div>
 						</div>
 					</div>
 				</div>
 				</form>
+				</c:if>
 			</c:forEach>
 				<div class="row">
 		</div>

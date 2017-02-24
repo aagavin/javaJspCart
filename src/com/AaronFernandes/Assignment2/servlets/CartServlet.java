@@ -25,15 +25,18 @@ public class CartServlet extends HttpServlet {
 		
 		if(cart==null){
 			cart = new Cart();
-			System.out.println("******");
-			System.out.println("Setting new cart");
-			System.out.println("******");
 			request.getSession().setAttribute("cart",cart);
 		}
 		int quanity = Integer.parseInt(request.getParameter("quantity"));
 		String sku = request.getParameter("sku");
 		
-		cart.addItem(sku, quanity);
+		if (cart.isItemInCart(sku)){
+			cart.updateItemCount(sku,quanity);
+		}	else {
+			cart.addItem(sku, quanity);
+		}
+		
+		
 		inventory.decrementItem(sku,quanity);
 		
 		request.setAttribute("cart", cart);

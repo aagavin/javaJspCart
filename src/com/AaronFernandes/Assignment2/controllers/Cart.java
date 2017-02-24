@@ -20,8 +20,17 @@ public class Cart {
 		this._cartItems.put(sku,value);
 	}
 	
+	public boolean isItemInCart(String sku){
+		for (String key : this._cartItems.keySet()) {
+			if (key.equals(sku)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public void updateItemCount(String sku, int value){
-		this.addItem(sku,value);
+		this.addItem(sku, this._cartItems.get(sku)+value);
 	}
 	
 	public Map<String, Integer> get_cartItems() {

@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
 	<title>Hello World</title>
@@ -29,21 +30,30 @@
 					<th>SKU #</th>
 					<th>Name</th>
 					<th>Quality</th>
+					<th>Unit Price</th>
 					<th>Total Price</th>
 				</tr>
 			</thead>
+			<c:set scope="page" value="0" var="totalPrice" />
+
 			<c:forEach var="cartItem" items="${cart.get_cartItems()}">
 				<c:set scope="page" value="${inventory.getItemBySku(cartItem.key)}" var="item" />
 				<tr>
 					<td>${cartItem.key}</td>
-					<td>${item.getName()}</td>
+					<td>${item.getName()} </td>
 					<td>${cartItem.value}</td>
-					<td>${item.getPrice()*cartItem.value}</td>
+					<td><fmt:formatNumber value="${item.getPrice()}" type="currency" /></td>
+					<td><fmt:formatNumber value="${item.getPrice()*cartItem.value}" type="currency" /></td>
+					<c:set scope="page" value="${totalPrice=totalPrice+item.getPrice()*cartItem.value}" var="totalPrice" />
 				</tr>
 			</c:forEach>
+			<tr>
+				<th colspan="4">Totals:</th>
+				<td><fmt:formatNumber value="${totalPrice}" type="currency" /></td>
+			</tr>
 		</table>
 	</div>
-	<a class="btn btn-default" href="${pageContext.request.contextPath}" role="button">Add a new item</a>
+	<a class="btn btn-default" href="${pageContext.request.contextPath}" role="button">Continue Shopping</a>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
