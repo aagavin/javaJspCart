@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="jstl-1.2">
+    <archive path="/home/aaron/Documents/Java/Assignment2/web/WEB-INF/lib/jstl-1.2.jar" />
+  </library>
+  <library name="html5shiv">
+    <archive path="/home/aaron/.IntelliJIdea2016.3/config/javascript/extLibs/http_oss.maxcdn.com_html5shiv_3.7.3_html5shiv.js" />
+  </library>
+  <library name="respond">
+    <archive path="/home/aaron/.IntelliJIdea2016.3/config/javascript/extLibs/http_oss.maxcdn.com_respond_1.4.2_respond.min.js" />
+  </library>
+</eclipse-userlibraries>
+

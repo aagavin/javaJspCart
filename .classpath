@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/Assignment2/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JBoss 10.2.0.Final"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jstl-1.2"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/html5shiv"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/respond"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
