@@ -1,4 +1,4 @@
-package com.AaronFernandes.Assignment2.controllers;
+package com.AaronFernandes.Assignment2.beans;
 
 import com.AaronFernandes.Assignment2.models.Item;
 

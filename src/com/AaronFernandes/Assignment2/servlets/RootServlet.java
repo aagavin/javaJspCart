@@ -1,6 +1,6 @@
 package com.AaronFernandes.Assignment2.servlets;
 
-import com.AaronFernandes.Assignment2.controllers.Inventory;
+import com.AaronFernandes.Assignment2.beans.Inventory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
