@@ -14,12 +14,22 @@ import java.io.IOException;
  * 300773526
  * -----------
  * Assignment 2
+ *
+ * This is the main servlet that loads when
  */
 @WebServlet(name = "rootServlet")
 public class RootServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.sendRedirect(request.getContextPath());
 	}
 	
+	/**
+	 *
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Inventory inventory = (Inventory) request.getSession().getAttribute("inventory");
