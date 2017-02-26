@@ -50,7 +50,7 @@ public class CartServlet extends HttpServlet {
 		// if the item is in the cart update the count
 		// else add a new item
 		if (cart.isItemInCart(sku)){
-			cart.updateItemCount(sku,quality);
+			cart.updateItemCount(sku, quality);
 		}
 		else {
 			cart.addItem(sku, quality);
