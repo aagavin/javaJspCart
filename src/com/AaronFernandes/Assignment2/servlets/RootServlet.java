@@ -17,18 +17,26 @@ import java.io.IOException;
  *
  * This is the main servlet that loads when
  */
-@WebServlet(name = "rootServlet")
+@WebServlet(name = "rootServlet", urlPatterns = "")
 public class RootServlet extends HttpServlet {
+	
+	/**
+	 * Handles the post request to the root endpoint
+	 * @param request HttpServletRequest
+	 * @param response HttpServletResponse
+	 * @throws ServletException thrown when there is an error in the exception
+	 * @throws IOException thrown when there is an error in IO
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.sendRedirect(request.getContextPath());
 	}
 	
 	/**
-	 *
-	 * @param request
-	 * @param response
-	 * @throws ServletException
-	 * @throws IOException
+	 * Handles the get request to the root endpoint
+	 * @param request HttpServletRequest
+	 * @param response HttpServletResponse
+	 * @throws ServletException thrown when there is an error in the exception
+	 * @throws IOException thrown when there is an error in IO
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -42,6 +50,6 @@ public class RootServlet extends HttpServlet {
 		
 		request.setAttribute("inventory", inventory);
 		response.setContentType("text/html");
-		request.getRequestDispatcher("root.jsp").forward(request, response); ;
+		request.getRequestDispatcher("root.jsp").forward(request, response);
 	}
 }

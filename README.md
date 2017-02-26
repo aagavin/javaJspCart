@@ -33,3 +33,7 @@ The `/Cart` is processed  by the `CartServlet`. The `CartServlet` gets what the 
  cart. The page is displayed using the `cart.jsp` page. The page shows the user their cart and a total price. 
  
 From here the the user can go back to the item list and add another item to the cart.
+
+## Deployment
+
+To deploy application use the `.war` file. **Open Project in modern browser** as it uses HTML5 features
